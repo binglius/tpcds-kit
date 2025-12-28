@@ -161,6 +161,7 @@ ld_s_promotion(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 }
 

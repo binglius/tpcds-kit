@@ -141,6 +141,7 @@ ld_s_reason(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 }
 

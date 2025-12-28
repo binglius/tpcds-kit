@@ -144,6 +144,7 @@ ld_s_web_promotional_item(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 }
 

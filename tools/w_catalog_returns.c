@@ -246,6 +246,7 @@ ld_w_catalog_returns(void *row)
 	else
 		r = row;
 
+	(void)r;
 	return(0);
 
 }

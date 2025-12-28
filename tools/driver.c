@@ -38,6 +38,7 @@
 #include "porting.h"
 #include <stdio.h>
 #include <time.h>
+#include <sys/time.h>
 #include <stdlib.h>
 #ifdef WIN32
 #include <process.h>
@@ -318,12 +319,14 @@ gen_tbl (int tabid, ds_key_t kFirstRow, ds_key_t kRowCount)
 		
 		/* not all rows that are built should be printed. Use return code to deterine output */
 		if (!pF->builder(NULL, i))
+		{
 			if (pF->loader[direct](NULL))
 			{
 				fprintf(stderr, "ERROR: Load failed on %s!\n", getTableNameByID(tabid));
 				exit(-1);
 			}
-			row_stop(tabid);
+		}
+		row_stop(tabid);
 	}
 	if (bIsVerbose)
 			fprintf(stderr, "Done    \n");	
@@ -398,6 +401,8 @@ main (int ac, char **av)
 	struct timeb t;
    tdef *pT;
    table_func_t *pF;
+	
+	(void)t;
 	
 	process_options (ac, av);
 	validate_options();
@@ -523,8 +528,9 @@ main (int ac, char **av)
 
 		if (!is_set("RNGSEED"))
 		{
-			ftime(&t);
-			setSeed(VALIDATE_STREAM, t.millitm);
+			struct timeval tv;
+			gettimeofday(&tv, NULL);
+			setSeed(VALIDATE_STREAM, tv.tv_usec / 1000);
 		} else {
 			setSeed(VALIDATE_STREAM, get_int("RNGSEED"));
 		}

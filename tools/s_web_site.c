@@ -48,7 +48,7 @@
 #include "permute.h"
 #include "scd.h"
 
-struct W_WEB_SITE_TBL g_w_web_site;
+extern struct W_WEB_SITE_TBL g_w_web_site;
 
 
 /*
@@ -146,6 +146,7 @@ ld_s_web_site(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 }
 

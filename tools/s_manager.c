@@ -144,6 +144,7 @@ ld_s_manager(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 }
 

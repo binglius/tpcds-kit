@@ -141,6 +141,7 @@ ld_s_catalog_promotional_item(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 
 }

@@ -369,7 +369,7 @@ embed_string(char *szDest, char *szDist, int nValue, int nWeight, int nStream)
 
 	pick_distribution(&szWord, szDist, nValue, nWeight, nStream);
 	nPosition = genrand_integer(NULL, DIST_UNIFORM, 0, strlen(szDest) - strlen(szWord) - 1, 0, nStream);
-	strncpy(&szDest[nPosition], szWord, strlen(szWord));
+	memcpy(&szDest[nPosition], szWord, strlen(szWord));
 
 	return(0);
 }

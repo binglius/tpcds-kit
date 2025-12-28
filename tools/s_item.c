@@ -152,6 +152,7 @@ ld_s_item(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 }
 

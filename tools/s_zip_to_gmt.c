@@ -149,7 +149,7 @@ mk_s_zip(void *pDest, ds_key_t kIndex)
 	pMap = &arGMTOffset[0];
 	while (kIndex > pMap->nMax)
 		pMap += 1;
-	sprintf(r->szZip, "%05lld", kIndex);
+	snprintf(r->szZip, sizeof(r->szZip), "%05ld", kIndex % 100000);
 	r->nGMTOffset = pMap->nOffset;
 	
 	return(r->nGMTOffset == -99?1:0);
@@ -211,6 +211,7 @@ ld_s_zip(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 }
 

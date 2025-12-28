@@ -111,7 +111,7 @@
 #ifdef LINUX
 #define SUPPORT_64BITS
 #define HUGE_TYPE	int64_t
-#define HUGE_FORMAT	"%lld"
+#define HUGE_FORMAT	"%ld"
 #define HUGE_COUNT	1
 #define USE_STRING_H
 #define USE_VALUES_H

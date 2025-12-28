@@ -53,7 +53,7 @@
 struct S_CATALOG_ORDER_TBL g_s_catalog_order;
 struct S_CATALOG_ORDER_LINEITEM_TBL g_s_catalog_order_lineitem;
 struct S_CATALOG_RETURNS_TBL	g_s_catalog_return;
-int nItemIndex;
+extern int nItemIndex;
 
 /*
 * Routine: 
@@ -204,6 +204,7 @@ ld_s_catalog_order(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 }
 

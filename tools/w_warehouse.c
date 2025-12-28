@@ -161,6 +161,7 @@ ld_w_warehouse(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 }
 

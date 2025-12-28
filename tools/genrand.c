@@ -270,6 +270,11 @@ genrand_decimal (decimal_t * dest, int dist, decimal_t * min, decimal_t * max,
    decimal_t res;
    double fres = 0.0;
 
+   /* Initialize res */
+   res.number = 0;
+   res.precision = 0;
+   res.flags = 0;
+
    if (min->precision < max->precision)
       dest->precision = min->precision;
    else

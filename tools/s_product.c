@@ -145,6 +145,7 @@ ld_s_product(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 }
 

@@ -234,12 +234,12 @@ find_dist(char *name)
 	id = (d_idx_t *)bsearch((void *)&key, (void *)idx, entry_count, 
 		sizeof(d_idx_t), di_compare);
 	if (id != NULL)	/* found a valid distribution */
+	{
 		if (id->flags != FL_LOADED)	 /* but it needs to be loaded */
 			load_dist(id);
-		
-		
-		
-		return(id);
+	}
+	
+	return(id);
 }
 
 /*
@@ -312,7 +312,7 @@ load_dist(d_idx_t *di)
 			d->maximums[i] = 0;
 			for (j=0; j < di->length; j++)
 			{
-				if (fread(&temp, 1, sizeof(int32_t), ifp) < 0)
+				if (fread(&temp, 1, sizeof(int32_t), ifp) != sizeof(int32_t))
 				{
 					fprintf(stderr, "Error: read of weights failed: ");
 					perror("load_dist()");
@@ -349,7 +349,7 @@ load_dist(d_idx_t *di)
 		{
 			d->names = (char *)malloc(di->name_space);
 			MALLOC_CHECK(d->names);
-			if (fread(d->names, 1, di->name_space * sizeof(char), ifp) < 0)
+			if (fread(d->names, 1, di->name_space * sizeof(char), ifp) != (size_t)(di->name_space * sizeof(char)))
 			{
 				fprintf(stderr, "Error: read of names failed: ");
 				perror("load_dist()");
@@ -361,7 +361,7 @@ load_dist(d_idx_t *di)
 		/* and finally the values themselves */
 		d->strings = (char *)malloc(sizeof(char) * di->str_space);
 		MALLOC_CHECK(d->strings);
-		if (fread(d->strings, 1, di->str_space * sizeof(char), ifp) < 0)
+		if (fread(d->strings, 1, di->str_space * sizeof(char), ifp) != (size_t)(di->str_space * sizeof(char)))
 		{
 			fprintf(stderr, "Error: read of strings failed: ");
 			perror("load_dist()");

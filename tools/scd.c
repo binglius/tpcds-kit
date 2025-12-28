@@ -169,6 +169,8 @@ scd_join(int tbl, int col, ds_key_t jDate)
 		jT2DataDate;
 	date_t dtTemp;
 
+	(void)jH1DataDate;
+
 	if (!bInit)
 	{
 		strtodt(&dtTemp, DATA_START_DATE);

@@ -340,7 +340,7 @@ int
 date_t_op(date_t *dest, int op, date_t *d1, date_t *d2)
 {
 	int tJulian;
-	char tString[11];
+	char tString[32];
 	date_t tDate;
 
 	switch(op)
@@ -563,9 +563,9 @@ day_number(date_t *d)
  * TODO: None
  */
 int
-getDateWeightFromJulian(jDay, nDistribution)
+getDateWeightFromJulian(int jDay, int nDistribution)
 {
-	date_t dTemp;
+	date_t dTemp = {0}; /* Initialize to suppress -O3 warnings */
 	int nDay;
 
 	jtodt(&dTemp, jDay);

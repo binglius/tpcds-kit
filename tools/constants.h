@@ -321,5 +321,5 @@
 #define RS_WEB_TYPE			50
 #define RS_WRHS_DESC		100
 #define RS_WORD_COMMENT		100
-#define RS_ZIPG_ZIP			5
+#define RS_ZIPG_ZIP			10
 #endif /* CONSTANTS_H */

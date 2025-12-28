@@ -134,6 +134,7 @@ ld_w_income_band(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 }
 

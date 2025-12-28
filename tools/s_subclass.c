@@ -145,6 +145,7 @@ ld_s_subclass(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 }
 

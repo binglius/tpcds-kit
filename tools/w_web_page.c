@@ -85,6 +85,8 @@ mk_w_web_page (void * row, ds_key_t index)
 	static ds_key_t nConcurrent,
 		nRevisions;
 
+	(void)nRevisions;
+
 	/* begin locals declarations */
 	int32_t nTemp,
 		nAccess;
@@ -245,6 +247,7 @@ ld_w_web_page(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 }
 

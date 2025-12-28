@@ -140,6 +140,7 @@ ld_s_manufacturer(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 }
 

@@ -142,6 +142,7 @@ ld_s_division(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 }
 

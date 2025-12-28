@@ -75,6 +75,8 @@ mk_master (void *row, ds_key_t index)
 		nMaxItemCount;
 	static ds_key_t kNewDateIndex = 0;
 
+	(void)nMaxItemCount;
+
 	if (row == NULL)
 		r = &g_w_store_sales;
 	else
@@ -230,6 +232,7 @@ ld_w_store_sales(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 }
 

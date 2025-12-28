@@ -261,6 +261,7 @@ int main(int argc, char* argv[])
 	d_idx_t *pIndexEntry;
 
 	nArgs = process_options(argc, argv);
+	(void)nArgs;
 	if (!is_set("INPUT") || !is_set("OUTPUT"))
 		usage(NULL, "Must specify input and output file names");
 	if (!is_set("HEADER"))

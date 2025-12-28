@@ -181,6 +181,7 @@ ld_s_pline(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 }
 

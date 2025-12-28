@@ -171,6 +171,7 @@ ld_s_store_returns(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 }
 

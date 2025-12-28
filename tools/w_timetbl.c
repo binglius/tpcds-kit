@@ -151,6 +151,7 @@ ld_w_time(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 }
 

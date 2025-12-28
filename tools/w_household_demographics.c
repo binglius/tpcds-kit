@@ -148,6 +148,7 @@ ld_w_household_demographics(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 }
 

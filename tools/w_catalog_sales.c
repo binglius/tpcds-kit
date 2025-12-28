@@ -169,6 +169,8 @@ mk_detail(void *row, int bPrint)
 	static int bInit = 0;
    tdef *pTdef = getSimpleTdefsByNumber(CATALOG_SALES);
 
+	(void)jDate;
+
 
 	if (row == NULL)
 		r = &g_w_catalog_sales;
@@ -362,6 +364,7 @@ ld_w_catalog_sales(void *row)
 	else
 		r = row;
 
+	(void)r;
 	return(0);
 }
 

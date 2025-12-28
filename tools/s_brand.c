@@ -146,6 +146,7 @@ ld_s_brand(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 }
 

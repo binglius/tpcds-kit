@@ -83,6 +83,8 @@ mk_w_web_site (void *row, ds_key_t index)
 	static decimal_t dMinTaxPercentage,
 		dMaxTaxPercentage;
 	static int32_t bInit = 0;
+	
+	(void)dToday;
 
 	/* begin locals declarations */
 	char szTemp[16],
@@ -121,7 +123,7 @@ mk_w_web_site (void *row, ds_key_t index)
 		r->web_close_date = mk_join(WEB_CLOSE_DATE, DATE, index);
 	if (r->web_close_date > r->web_rec_end_date_id)
 		r->web_close_date = -1;
-		sprintf(r->web_name, "site_%d", (int)(index / 6));
+	sprintf(r->web_name, "site_%d", (int)(index / 6));
 		bFirstRecord = 1;
 	}
 	
@@ -270,6 +272,7 @@ ld_w_web_site(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 }
 

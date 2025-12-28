@@ -85,9 +85,11 @@ mk_dbgen_version(void *pDest, ds_key_t kIndex)
 	time( &ltime );                 /* Get time in seconds */
 	pTimeStamp = localtime( &ltime );  /* Convert time to struct */
 	
-	sprintf(r->szDate, "%4d-%02d-%02d", pTimeStamp->tm_year + 1900, pTimeStamp->tm_mon + 1, pTimeStamp->tm_mday);
-	sprintf(r->szTime, "%02d:%02d:%02d", pTimeStamp->tm_hour, pTimeStamp->tm_min, pTimeStamp->tm_sec);
-	sprintf (r->szVersion,"%d.%d.%d%s", VERSION, RELEASE, MODIFICATION, PATCH);
+	int year = pTimeStamp->tm_year + 1900;
+	if (year < 1900 || year > 9999) year = 2024; // 限制年份范围
+	snprintf(r->szDate, sizeof(r->szDate), "%04d-%02d-%02d", year, pTimeStamp->tm_mon + 1, pTimeStamp->tm_mday);
+	snprintf(r->szTime, sizeof(r->szTime), "%02d:%02d:%02d", pTimeStamp->tm_hour, pTimeStamp->tm_min, pTimeStamp->tm_sec);
+	snprintf(r->szVersion, sizeof(r->szVersion), "%d.%d.%d%s", VERSION, RELEASE, MODIFICATION, PATCH);
 	strcpy(r->szCmdLineArgs, g_szCommandLine);
 	
 	return(0);
@@ -151,6 +153,7 @@ ld_dbgen_version(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 }
 

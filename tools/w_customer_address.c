@@ -152,6 +152,7 @@ ld_w_customer_address(void *row)
 	else
 		r = row;
 
+	(void)r;
 	return(0);
 }
 

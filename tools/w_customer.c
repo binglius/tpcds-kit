@@ -83,6 +83,8 @@ mk_w_customer (void * row, ds_key_t index)
 		dt10YearsAgo;
    tdef *pT = getSimpleTdefsByNumber(CUSTOMER);
 
+	(void)nBaseDate;
+
 	if (row == NULL)
 		r = &g_w_customer;
 	else
@@ -212,6 +214,7 @@ ld_w_customer(void *row)
 	else
 		r = row;
 
+	(void)r;
 	return(0);
 }
 

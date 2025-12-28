@@ -150,6 +150,7 @@ ld_s_store(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 }
 

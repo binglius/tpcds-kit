@@ -319,6 +319,7 @@ ld_w_web_sales(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 }
 

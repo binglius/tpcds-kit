@@ -221,6 +221,7 @@ ld_w_web_returns(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 }
 

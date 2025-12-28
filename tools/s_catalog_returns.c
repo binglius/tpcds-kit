@@ -178,6 +178,7 @@ ld_s_catalog_returns(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 }
 

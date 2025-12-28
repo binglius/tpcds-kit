@@ -183,6 +183,7 @@ ld_s_web_return(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 }
 

@@ -67,6 +67,8 @@ validateGeneric(int nTable, ds_key_t kRow, int *Permute)
    tdef *pChild;
    table_func_t *pTF = getTdefFunctionsByNumber(nTable);
 
+	(void)pChild;
+
 	if (is_set("UPDATE") )
    {
       /*

@@ -151,6 +151,7 @@ ld_w_customer_demographics(void *row)
 	else
 		r = row;
 
+	(void)r;
 	return(0);
 }
 

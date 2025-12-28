@@ -77,6 +77,8 @@ mk_w_promotion(void *pDest, ds_key_t index)
 	int nFlags;
    tdef *pTdef = getSimpleTdefsByNumber(PROMOTION);
 	
+	(void)nTemp;
+	
 	if (pDest == NULL)
 		r = &g_w_promotion;
 	else
@@ -210,6 +212,7 @@ ld_w_promotion(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 }
 

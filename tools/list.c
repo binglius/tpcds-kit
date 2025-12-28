@@ -293,8 +293,8 @@ findList(list_t *pList, void *pData)
 			return(pNode);
 		}
 
-		pList->pCurrent = pOldCurrent;
-		return(NULL);
+	pList->pCurrent = pOldCurrent;
+	return(NULL);
 }
 
 /*

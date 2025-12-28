@@ -150,6 +150,7 @@ ld_s_web_page(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 }
 

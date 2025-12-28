@@ -210,6 +210,7 @@ ld_s_web_order(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 }
 

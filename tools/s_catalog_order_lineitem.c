@@ -192,6 +192,7 @@ ld_s_catalog_order_lineitem(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 }
 

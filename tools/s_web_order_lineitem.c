@@ -51,7 +51,7 @@
 #include "scaling.h"
 #include "scd.h"
 
-struct S_WEB_ORDER_LINEITEM_TBL g_s_web_order_lineitem;
+extern struct S_WEB_ORDER_LINEITEM_TBL g_s_web_order_lineitem;
 extern struct S_WEB_ORDER_TBL g_s_web_order;
 extern int nItemIndex;
 
@@ -189,6 +189,7 @@ ld_s_web_order_lineitem(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 }
 

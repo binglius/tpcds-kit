@@ -154,6 +154,7 @@ ld_w_ship_mode(void *pSrc)
 	else
 		r = pSrc;
 	
+	(void)r;
 	return(0);
 }
 

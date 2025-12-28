@@ -201,7 +201,7 @@ print_delete (int * val)
       exit(-1);
 	}
    if (is_set("TERMINATE"))
-	   fprintf(fpDeleteFile, get_str("DELIMITER"));
+	   fprintf(fpDeleteFile, "%s", get_str("DELIMITER"));
    fprintf(fpDeleteFile, "\n");
    
    return;

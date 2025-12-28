@@ -91,6 +91,8 @@ mk_w_call_center (void* row, ds_key_t index)
 		nFieldChangeFlags,
 		jDateEnd,
 		nDateRange;
+	
+	(void)nDaysPerRevision;
 	char *cp,
 		*sName1,
 		*sName2;
